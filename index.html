@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="index.css" rel="stylesheet" text="text/css">
+</head>
+<body>
+    <div class="container">
+        <button id="play" class="play">재생</button>
+    </div>
+    <script src="http://unpkg.com/tone"></script>
+    <script> 
+
+        document.getElementById('play').addEventListener('click', async () => {
+            console.log("아앙")
+            await Tone.Transport.start()
+        })
+
+        const drum = new Tone.MembraneSynth().toDestination();
+        new Tone.Loop(t => {
+            drum.triggerAttackRelease("C1", "8n", t)
+            drum.triggerAttackRelease("G4", "16n", t + 0.5)
+            drum.triggerAttackRelease("C1", "8n", t + 1)
+            drum.triggerAttackRelease("C1", "8n", t + 1.5)
+            drum.triggerAttackRelease("C1", "8n", t + 2)
+            drum.triggerAttackRelease("G4", "16n", t + 2.5)
+            drum.triggerAttackRelease("C1", "8n", t + 3)
+        }, 3.5).start(0)
+
+
+    </script>
+</body>
+</html>

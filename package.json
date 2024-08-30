@@ -1,0 +1,16 @@
+{
+  "name": "tonehtml",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "live-server --port=8090"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "tone": "^15.0.4"
+  },
+  "type": "module"
+}
